@@ -121,7 +121,7 @@ int main(int argc, char **argv)
    ros::init(argc, argv, "ball_detect_node"); //init ros nodd
    ros::NodeHandle nh; //create node handler
    image_transport::ImageTransport it(nh); //create image transport and connect it to node hnalder
-   image_transport::Subscriber sub = it.subscribe("camera/image", 1, imageCallback); //create subscriber
+   image_transport::Subscriber sub = it.subscribe("camera/image_raw", 1, imageCallback); //create subscriber
 
    pub = nh.advertise<core_msgs::ball_position>("/position", 100); //setting publisher
    pub_markers = nh.advertise<visualization_msgs::Marker>("/balls",1);
